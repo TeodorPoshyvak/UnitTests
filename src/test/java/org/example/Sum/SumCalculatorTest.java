@@ -16,25 +16,18 @@ class SumCalculatorTest {
 
     @Test
     void testSumFirst() {
-        int actual = sumObj.sum(1);
-        int exp = 1;
-
-        Assertions.assertEquals(exp, actual);
+        Assertions.assertEquals(1, sumObj.sum(1));
     }
 
     @Test
     void testSumSecond() {
-        int actual = sumObj.sum(3);
-        int exp = 6;
-
-        Assertions.assertEquals(exp, actual);
+        Assertions.assertEquals(6, sumObj.sum(3));
     }
 
     @Test
     void testSumThird() {
-        SumCalculator sumCalculator = new SumCalculator();
         Assertions.assertThrows(ValidationException.class,
-                () -> sumCalculator.sum(0));
+                () -> sumObj.sum(0));
     }
 
     @AfterAll
